@@ -1,0 +1,210 @@
+// Stuff that will already be in ext - probably.
+
+html {
+  margin-bottom: 60px;
+  background-color: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+    "Fira Sans", "Droid Sans", "Helvetica Neue", 
+    sans-serif;
+  * {
+    box-sizing: border-box;
+  }
+}
+p {
+  margin: 5px 0;
+  font-weight: 300;
+}
+
+// Background strip at top
+
+.strip-background {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  width: 100%;
+  height: 215px;
+  background-color: #6891DC;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+// Generic cards
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
+  border-radius: 8px;
+  padding: 20px;
+  @media screen and (min-width: 768px) {
+    padding: 30px;
+  }
+}
+
+// Search results
+
+.search__container {
+  padding: 0 20px;
+  width: 100%;
+  margin: 20px auto 0;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    width: 75%;
+    margin-top: 40px;
+  }
+}
+.search-item {
+  border-bottom: 1px solid #D3DCE6;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  @media screen and (min-width: 768px) {
+    flex-wrap: no-wrap;
+  }
+}
+.search-item__content {
+  padding-top: 2px;
+  order: 5;
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    width: auto; 
+  }
+}
+.search-item__image {
+  order: 1;
+  width: 34px;
+  height: 34px;
+  background-color: red;
+  border-radius: 8px;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  
+  @media screen and (min-width: 600px) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+}
+.search-item__options {
+  order: 2;
+  margin-left: auto;
+  @media screen and (min-width: 600px) {
+    order: 10;
+  }
+}
+
+// Labels
+
+.label {
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 5px;
+  vertical-align: middle;
+}
+.label--red {
+  background-color: #FF4747;
+  color: #FFFFFF;
+}
+
+// Buttons - some of the reset-y type styles may be in ext already - like removing borders etc
+
+.button {
+  display: inline-block;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 8px;
+  background-color: red;
+  font-size: 14px;
+  padding: 22px;
+}
+.button--small {
+  font-size: 10px;
+  padding: 10px;
+}
+.button--block {
+  display: block;
+  width: 100%;
+}
+.button--primary {
+  background-color: #72CB36;
+  color: #FFFFFF;
+}
+.button--outline {
+  border: 1px solid #D3DCE6;
+  color: #A1A1A1;
+  background-color: transparent;
+}
+
+// Text modifiers
+
+.text--upcase {
+  text-transform: uppercase; 
+}
+.text--small {
+  font-size: 14px;
+}
+.text--muted {
+  color: #8F8F8F; 
+}
+.text--medium {
+  font-weight: 400;
+}
+.text--center {
+  text-align: center;
+}
+
+// Form elements
+
+.form {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="date"]{
+  border: 0;
+  border-bottom: 1px solid #D3DCE6;
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  padding: 10px 0 0 0;
+  transition: all 0.3s ease;
+  appearance: none;
+  &:focus {
+    outline: 0;
+    border-color: #72A3FF;
+  }
+}
+.input__w-placeholder {
+  position: relative;
+}
+label {
+  position: absolute;
+  transition: all 0.1s ease;
+  z-index: 1;
+  left: 0;
+  top: 20px;
+  color: #A1A1A1;
+  .focus &, .static-label & {
+    top: 0;
+    font-size: 12px;
+  }
+}
+
